@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import signal
 import subprocess
 import sys
@@ -22,16 +23,43 @@ MAX_OUTPUT_CHARS = 20_000
 SYSTEM_PATH = "/usr/local/bin:/usr/bin:/bin"
 
 
+def _find_bash() -> str:
+    found = shutil.which("bash")
+    if found:
+        return found
+    if sys.platform == "win32":
+        for candidate in [
+            r"C:\Program Files\Git\bin\bash.exe",
+            r"C:\Program Files\Git\usr\bin\bash.exe",
+            r"C:\Program Files (x86)\Git\bin\bash.exe",
+        ]:
+            if os.path.exists(candidate):
+                return candidate
+    return "bash"
+
+
 def minimal_env(workspace: Path) -> dict[str, str]:
     """PATH trỏ venv của project trước, locale UTF-8. Không truyền API key hay biến môi trường khác."""
     venv_bin = str(Path(sys.executable).parent)
     locale = os.environ.get("LANG", "")
+    if sys.platform == "win32":
+        git_dirs = []
+        for d in [r"C:\Program Files\Git\bin", r"C:\Program Files\Git\usr\bin", r"C:\Program Files\Git\cmd"]:
+            if os.path.isdir(d):
+                git_dirs.append(d)
+        system_root = os.environ.get("SystemRoot", r"C:\Windows")
+        sys_dirs = [system_root + r"\system32", system_root]
+        path_val = ";".join([venv_bin] + git_dirs + sys_dirs)
+    else:
+        path_val = f"{venv_bin}:{SYSTEM_PATH}"
+
     return {
-        "PATH": f"{venv_bin}:{SYSTEM_PATH}",
+        "PATH": path_val,
         "HOME": str(workspace),
         "LANG": locale if "UTF-8" in locale.upper() else "C.UTF-8",
         "LC_ALL": locale if "UTF-8" in locale.upper() else "C.UTF-8",
         "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1",
         "PYTHONDONTWRITEBYTECODE": "1",
     }
 
@@ -46,22 +74,37 @@ def _run_bash(command: str, workspace: Path, timeout: float = DEFAULT_TIMEOUT_SE
     if not command.strip():
         return {"ok": False, "exit_code": None, "stdout": "", "stderr": "", "timed_out": False,
                 "error": {"code": "EMPTY_COMMAND", "message": "Command rỗng."}}
-    process = subprocess.Popen(
-        ["bash", "-c", command],  # không login shell, không đọc profile
-        cwd=workspace,
-        env=minimal_env(workspace),
-        stdin=subprocess.DEVNULL,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        start_new_session=True,  # để kill cả process group khi timeout
-    )
+    bash_executable = _find_bash()
+    try:
+        process = subprocess.Popen(
+            [bash_executable, "-c", command],  # không login shell, không đọc profile
+            cwd=workspace,
+            env=minimal_env(workspace),
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            start_new_session=True if sys.platform != "win32" else False,
+        )
+    except FileNotFoundError as exc:
+        return {
+            "ok": False,
+            "exit_code": None,
+            "stdout": "",
+            "stderr": str(exc),
+            "timed_out": False,
+            "error": {"code": "BASH_NOT_FOUND", "message": f"Không tìm thấy bash: {exc}"},
+        }
+
     try:
         stdout, stderr = process.communicate(timeout=timeout)
     except subprocess.TimeoutExpired:
-        os.killpg(process.pid, signal.SIGKILL)
+        if sys.platform == "win32":
+            process.kill()
+        else:
+            os.killpg(process.pid, signal.SIGKILL)
         stdout, stderr = process.communicate()
         stdout, out_clipped = _clip(stdout or "")
         stderr, err_clipped = _clip(stderr or "")
@@ -96,4 +139,4 @@ def bash(command: str) -> str:
     ok=true nghĩa là lệnh đã chạy xong và có kết quả; exit_code khác 0 nghĩa là chương trình báo lỗi.
     Timeout: {"ok": false, "exit_code": null, "timed_out": true, ...} kèm output một phần nếu có.
     """
-    return json.dumps(_run_bash(command, paths.WORKSPACE_DIR), ensure_ascii=False)
+    return json.dumps(_run_bash(paths.WORKSPACE_DIR, command) if False else _run_bash(command, paths.WORKSPACE_DIR), ensure_ascii=False)

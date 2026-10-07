@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html -->
+<html lang="vi"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Block 2 | Kiểm tra quá tải theo người</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Block 2 _ Kiểm tra quá tải theo người_files/css2" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--paper:#fffdf9;--ink:#322b25;--muted:#74675b;--coffee:#795438;--cream:#ede3d5;--line:#ded4c7;--accent:#516044}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.8 'Be Vietnam Pro',Arial,sans-serif}a{color:var(--coffee);text-underline-offset:4px}header,main,footer{max-width:1060px;margin:auto;padding:0 28px}header{padding-top:52px;padding-bottom:30px}.eyebrow{font-size:12px;letter-spacing:.13em;font-weight:700;text-transform:uppercase;color:var(--coffee)}h1{font-size:clamp(30px,5vw,48px);line-height:1.25;letter-spacing:-.04em;margin:18px 0}h2{font-size:23px;line-height:1.4;margin:0 0 16px}h3{font-size:17px;margin:22px 0 10px}.lead{max-width:780px;color:var(--muted);font-size:17px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.tag{border:1px solid var(--line);border-radius:30px;padding:5px 14px;font-size:12px;font-weight:600}nav{display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;font-size:13px}section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;margin-bottom:20px;scroll-margin-top:20px}.section-label{color:var(--coffee);font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:8px}p{margin:10px 0 16px}ul,ol{padding-left:24px}li{margin:7px 0}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--cream);border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#eee7dd;border:1px solid var(--line);border-radius:10px;padding:18px;overflow:auto;line-height:1.65;font-size:13px}pre code{background:none;padding:0;overflow-wrap:normal}.note{border-left:4px solid var(--coffee);background:#f4eee5;padding:15px 18px;border-radius:0 8px 8px 0;margin:18px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#f7f3ed;border:1px solid var(--line);border-radius:12px;padding:20px}.card h3{margin-top:0}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;vertical-align:top;padding:13px;border-bottom:1px solid var(--line)}th{background:var(--cream);font-weight:600}.checklist{list-style:none;padding:0}.checklist li{position:relative;padding-left:28px}.checklist li:before{content:'';position:absolute;left:0;top:8px;width:13px;height:13px;border:1.5px solid var(--coffee);border-radius:3px}footer{padding-top:10px;padding-bottom:38px;color:var(--muted);font-size:12px}.step{display:inline-block;color:var(--accent);font-weight:600;font-size:12px;margin-bottom:8px}@media(max-width:640px){header,main,footer{padding-left:18px;padding-right:18px}header{padding-top:30px}section{padding:22px 18px}.grid{grid-template-columns:1fr}h2{font-size:21px}}@media print{body{background:white;font-size:11px}header{padding-top:0}header,main,footer{max-width:none;padding-left:0;padding-right:0}nav{display:none}section{border-radius:0;padding:18px;break-inside:auto}h2,h3{break-after:avoid}pre,.card,tr{break-inside:avoid}a{color:inherit}.tags{margin:12px 0}h1{font-size:30px}}
+</style>
+<style>
+:root{--accent:#895f40}
+body{font-size:18px;background:radial-gradient(ellipse at 0 0,#e8d6bf99,transparent 42%),radial-gradient(ellipse at 100% 35%,#dec6ae77,transparent 38%),var(--bg)}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-width:0}
+header,main,footer{max-width:1180px}
+header{position:relative;isolation:isolate;padding-top:60px}
+header:before{content:'';position:absolute;z-index:-1;inset:22px 0 28px;border-radius:28px;background:linear-gradient(120deg,#eee0ccdd,#f8f3e8aa 52%,#e5ccb4bb);border:1px solid #e4d6c5}
+header:after{content:'';position:absolute;z-index:-1;width:180px;height:180px;right:36px;top:50px;border-radius:42px;transform:rotate(12deg);background:linear-gradient(140deg,#3b2418,#795438);border:1px solid #9b7453;box-shadow:0 18px 38px #3b241826}
+.eyebrow{font-size:14px;letter-spacing:.09em;position:relative}
+h1{font-size:clamp(36px,5vw,56px);max-width:850px}
+h2{font-size:28px;display:flex;align-items:center;gap:14px}
+h3{font-size:21px}.lead{font-size:21px;max-width:870px}
+.tags{gap:10px}.tag{font-size:15px;display:inline-flex;align-items:center;gap:9px;background:#fffdf9b3;padding:8px 16px}
+nav{font-size:16px;gap:10px;padding-bottom:12px}
+nav a{display:inline-flex;align-items:center;gap:8px;background:#fffdf99c;border:1px solid #ded4c7;border-radius:10px;padding:8px 12px;text-decoration:none}
+nav a:hover{background:#fffdf9;border-color:var(--coffee)}
+section{padding:34px;margin-bottom:24px;box-shadow:0 8px 28px #694b2710}
+.section-label{font-size:14px}.step{font-size:15px}
+pre{font-size:16px;padding:22px;background:linear-gradient(125deg,#eee4d6,#f5f0e8)}
+table{font-size:16px}th,td{padding:16px}.card{background:linear-gradient(135deg,#f2e8d9,#fbf8f1)}
+.note{background:linear-gradient(110deg,#eee0cc,#f6f1e7 65%,#ead8c5);padding:20px 22px}
+.icon{width:22px;height:22px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.title-icon{width:48px;height:48px;padding:10px;box-sizing:content-box;border:1px solid #8c6548;background:linear-gradient(140deg,#3b2418,#6b442c);border-radius:20px;color:#fff4e6;display:block;margin-bottom:22px;box-shadow:0 10px 20px #3b241826}
+.heading-icon{width:46px;height:46px;padding:11px;background:linear-gradient(135deg,#ecdbc3,#f8f2e7);border-radius:13px;color:var(--coffee)}
+.decor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 24px}
+.decor-card{padding:24px;border-radius:18px;border:1px solid #dacbb6;background:linear-gradient(125deg,#e7cba9,#f3e8d6);display:flex;align-items:center;gap:16px}
+.decor-card:nth-child(2){background:linear-gradient(125deg,#3b2418,#6b442c);border-color:#795438;color:#fff4e6}
+.decor-card:nth-child(3){background:linear-gradient(125deg,#e1cfbd,#f6ede3)}
+.decor-card .icon{width:32px;height:32px;color:var(--coffee)}
+.decor-card strong{display:block;font-size:18px;line-height:1.4}.decor-card span{font-size:14px;color:#645747}
+.decor-card:nth-child(2) .icon{color:#f0ceaa}.decor-card:nth-child(2) span{color:#ecd7c3}
+footer{font-size:15px}
+@media(max-width:760px){.decor{grid-template-columns:1fr}.decor-card{padding:18px}.grid{grid-template-columns:1fr}header:after{width:110px;height:110px;right:20px;top:50px;opacity:.45}h2{font-size:24px}}
+@media(max-width:640px){body{font-size:17px}.lead{font-size:19px}header{padding-top:48px}header:before{inset:16px 8px 22px}section{padding:24px 20px}nav{font-size:14px}.tag{font-size:14px}pre{font-size:15px}table{font-size:15px}}
+@media print{body{font-size:11px;background:white}header:before,header:after,.decor{display:none}header{padding-top:0}.title-icon{display:none}h1{font-size:30px}h2{font-size:20px}h3{font-size:15px}.lead{font-size:13px}.tag,.section-label,.step,footer{font-size:11px}pre,table{font-size:10px}section{padding:18px;box-shadow:none}.heading-icon{width:28px;height:28px;padding:5px}}
+</style>
+<script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="d92aefc3-3668-4489-a794-3ce3080fef36" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="d92aefc3-3668-4489-a794-3ce3080fef36" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script></head>
+<body __processed_c8434927-a6e8-4ce2-ba48-de5f17a426cc__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjMuMCIsInNjb3JlIjoyMDMwMDB9XQ==">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!-- Lucide icons: ISC license, https://lucide.dev -->
+<symbol id="icon-book-open" viewBox="0 0 24 24"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></symbol>
+<symbol id="icon-folder" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2Z"></path></symbol>
+<symbol id="icon-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6M12 19h8"></path></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"></path><rect x="5" y="5" width="14" height="16" rx="2"></rect><rect x="9" y="3" width="6" height="4" rx="1"></rect></symbol>
+<symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></symbol>
+<symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path><circle cx="9" cy="7" r="4"></circle></symbol>
+<symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 10 6-10 6L2 9l10-6ZM2 15l10 6 10-6M2 12l10 6 10-6"></path></symbol>
+<symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"></path></symbol>
+</svg>
+<header>
+<div class="eyebrow" bis_skin_checked="1">Agentic AI Engineering / D05 / Bài luyện tập 02</div>
+<svg class="icon title-icon" aria-hidden="true"><use href="#icon-terminal"></use></svg><h1>Kiểm tra quá tải<br>theo người</h1>
+<p class="lead">Sửa script kiểm tra CSV để tính tổng giờ theo người, loại dòng không hợp lệ và không cộng trùng công việc. Cập nhật skill để dùng ngưỡng người dùng cung cấp.</p>
+<div class="tags" bis_skin_checked="1"><span class="tag"><svg class="icon " aria-hidden="true"><use href="#icon-layers"></use></svg>Stage 03 → 04</span><span class="tag"><svg class="icon " aria-hidden="true"><use href="#icon-clock"></use></svg>20 phút</span><span class="tag"><svg class="icon " aria-hidden="true"><use href="#icon-users"></use></svg>Nhóm 2 người</span><span class="tag"><svg class="icon " aria-hidden="true"><use href="#icon-terminal"></use></svg>Sửa script + cập nhật skill</span></div>
+<nav aria-label="Mục lục"><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html#prepare"><svg class="icon " aria-hidden="true"><use href="#icon-folder"></use></svg>Chuẩn bị</a><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html#build"><svg class="icon " aria-hidden="true"><use href="#icon-terminal"></use></svg>Thực hiện</a><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html#contract"><svg class="icon " aria-hidden="true"><use href="#icon-layers"></use></svg>Đầu ra JSON</a><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html#verify"><svg class="icon " aria-hidden="true"><use href="#icon-check"></use></svg>Kiểm tra</a><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-2.html#submit"><svg class="icon " aria-hidden="true"><use href="#icon-check"></use></svg>Nộp bài</a><a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-1.html"><svg class="icon " aria-hidden="true"><use href="#icon-arrow"></use></svg>← Block 1</a></nav>
+</header>
+<main>
+<div class="decor" aria-label="Lộ trình bài tập" bis_skin_checked="1">
+<div class="decor-card" bis_skin_checked="1"><svg class="icon" aria-hidden="true"><use href="#icon-terminal"></use></svg><div bis_skin_checked="1"><strong>Chạy bằng Bash</strong><span>Đối chiếu tổng giờ với CSV</span></div></div>
+<div class="decor-card" bis_skin_checked="1"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg><div bis_skin_checked="1"><strong>Sửa script</strong><span>Thêm quy tắc tính tổng giờ</span></div></div>
+<div class="decor-card" bis_skin_checked="1"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><div bis_skin_checked="1"><strong>Kiểm tra trường hợp đặc biệt</strong><span>ID trùng và ngưỡng bằng tổng giờ</span></div></div>
+</div>
+<section><div class="section-label" bis_skin_checked="1">MỤC TIÊU</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-layers"></use></svg>Tính tổng giờ và xác định người quá tải</h2>
+<p>Script mẫu kiểm tra chất lượng CSV nhưng chưa tính tổng giờ theo người. Bạn phải mở rộng thuật toán, thêm tham số CLI và đồng bộ hướng dẫn của skill với kết quả mới.</p>
+<div class="note" bis_skin_checked="1"><strong>Giới hạn thay đổi:</strong> sửa skill <code>csv-quality</code> và script hiện có. Không thêm tool, không sửa <code>agent.py</code>, không viết cố định kết quả hoặc ngưỡng 8 trong script hay skill.</div>
+</section>
+<section id="prepare"><div class="section-label" bis_skin_checked="1">01 / CHUẨN BỊ</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-folder"></use></svg>CSV có dòng lỗi và công việc trùng</h2>
+<p>Dùng bản sao stage 03 và stage 04 trong <code>demo/agent-tools-skills-lab/</code>, với môi trường và model đã cấu hình. Tạo <code>workspace/data/workload.csv</code> ở cả hai bản sao:</p>
+<pre><code>task_id,owner,hours
+T01,Lan,4
+T02,Lan,5
+T03,Minh,3
+T04,Minh,abc
+T02,Lan,5
+T05,,2</code></pre>
+<p>Agent sử dụng đường dẫn <code>data/workload.csv</code>. Header là dòng 1; các dòng dữ liệu bắt đầu từ dòng 2.</p>
+</section>
+<section id="build"><div class="section-label" bis_skin_checked="1">02 / THỰC HIỆN</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-terminal"></use></svg>Các bước thực hiện</h2>
+<h3><span class="step">Stage 03 / 5 phút</span><br>Tính tổng giờ bằng Python qua Bash</h3>
+<pre><code>Dùng Python qua Bash để tính tổng hours theo owner trong
+data/workload.csv. Không chỉnh sửa file đầu vào.
+Cho biết cách xử lý dòng lỗi và task_id trùng.</code></pre>
+<p>Đọc lệnh và kết quả tool. Xác định những dòng được cộng vào tổng giờ. Nếu tổng của Lan là 14 giờ, chỉ ra dòng bị cộng trùng. Nếu tổng đã đúng, chỉ ra đoạn lệnh loại công việc trùng.</p>
+<h3><span class="step">Stage 04 / 15 phút</span><br>Mở rộng script và cập nhật skill</h3>
+<p>Chỉnh các file trong <code>workspace/skills/csv-quality/</code>:</p>
+<pre><code>SKILL.md
+references/report-template.md
+scripts/check_csv.py</code></pre>
+<ol>
+<li>Đọc script hiện có. Tái sử dụng phần đọc CSV, kiểm tra giá trị hours, phát hiện lỗi và xử lý lỗi đầu vào.</li>
+<li>Thêm tham số bắt buộc <code>--max-hours</code>, nhận số hữu hạn không âm. Nếu thiếu tham số hoặc giá trị không hợp lệ, ghi lỗi ra stderr và trả mã thoát khác 0.</li>
+<li>Bổ sung tổng giờ, danh sách người quá tải và các dòng bị loại theo cấu trúc JSON bên dưới. Giữ các trường kiểm tra chất lượng hiện có.</li>
+<li>Cập nhật <code>SKILL.md</code>: nếu yêu cầu kiểm tra quá tải thiếu ngưỡng thì hỏi lại; nếu có, truyền đúng giá trị vào lệnh. Không dùng ngưỡng từ cuộc trò chuyện cũ.</li>
+<li>Cập nhật reference để báo cáo có ngưỡng, tổng giờ theo người, người vượt ngưỡng và các dòng bị loại kèm lý do.</li>
+</ol>
+<div class="note" bis_skin_checked="1"><strong>Lưu bài làm:</strong> lệnh reset có thể ghi đè các file trong <code>workspace/</code>. Sao chép skill đã sửa sang <code>fixtures/skills/csv-quality/</code> trước khi reset.</div>
+<p>Được dùng coding assistant hỗ trợ viết mã nguồn. Kiểm tra thuật toán, JSON và báo cáo bằng dữ liệu đầu vào.</p>
+</section>
+<section id="contract"><div class="section-label" bis_skin_checked="1">03 / ĐẦU RA JSON</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-layers"></use></svg>Quy tắc tính và cấu trúc kết quả</h2>
+<ul>
+<li>Chuẩn hóa bằng cách bỏ khoảng trắng đầu/cuối ở <code>task_id</code>, <code>owner</code>, <code>hours</code>. Không gộp hai owner khác tên hoặc khác hoa/thường.</li>
+<li>Mỗi ID không rỗng chỉ giữ <strong>lần xuất hiện đầu tiên trong file</strong>. Lần sau bị loại, kể cả khi lần đầu có dữ liệu không hợp lệ. Không thay bằng “lần hợp lệ đầu tiên”.</li>
+<li>Chỉ cộng dòng có đúng số trường, ID không rỗng, owner không rỗng và hours là số hữu hạn không âm. Giá trị <code>0</code> hợp lệ.</li>
+<li>Mỗi dòng bị loại xuất hiện một lần trong <code>excluded_rows</code>, kèm tất cả lý do loại dòng đó. Bỏ qua dòng trống như script hiện có.</li>
+<li>Quá tải khi tổng giờ <strong>lớn hơn</strong> ngưỡng. Bằng ngưỡng không phải quá tải.</li>
+<li>Các thống kê chất lượng dữ liệu cũ vẫn phân tích toàn bộ dòng dữ liệu, không chỉ những dòng được cộng vào tổng giờ.</li>
+</ul>
+<div class="table-wrap" bis_skin_checked="1"><table><thead><tr><th>Trường mới</th><th>Cấu trúc</th><th>Ý nghĩa</th></tr></thead><tbody>
+<tr><td><code>max_hours</code></td><td>Số</td><td>Ngưỡng nhận từ CLI.</td></tr>
+<tr><td><code>hours_by_owner</code></td><td>Object: tên owner → tổng giờ</td><td>Chỉ chứa owner có ít nhất một dòng được cộng.</td></tr>
+<tr><td><code>overloaded_owners</code></td><td>Danh sách object có <code>owner</code>, <code>total_hours</code></td><td>Những người vượt ngưỡng, sắp xếp theo tên.</td></tr>
+<tr><td><code>excluded_rows</code></td><td>Danh sách object có <code>line</code>, <code>task_id</code>, <code>reasons</code></td><td>Sắp xếp theo dòng; ID rỗng là <code>null</code>; reasons là danh sách mã lý do.</td></tr>
+</tbody></table></div>
+<p>Mã lý do: <code>wrong_field_count</code>, <code>missing_task_id</code>, <code>duplicate_id</code>, <code>missing_owner</code>, <code>invalid_hours</code>. Sắp xếp mã lý do theo thứ tự này để kết quả ổn định.</p>
+<h3>Chạy script trực tiếp</h3>
+<p>Từ thư mục stage 04, chạy:</p>
+<pre><code>uv run python workspace/skills/csv-quality/scripts/check_csv.py \
+  --input workspace/data/workload.csv --max-hours 8</code></pre>
+<p>Tool Bash chạy trong thư mục workspace. Lệnh trong skill dùng đường dẫn <code>skills/csv-quality/scripts/check_csv.py</code> và <code>data/workload.csv</code>.</p>
+<p>Trả mã thoát <code>0</code> khi phân tích được dữ liệu, kể cả có dòng bị loại hoặc người quá tải. Giữ cách báo lỗi hiện có cho file không tồn tại, thiếu cột bắt buộc hoặc CSV không đọc được. Không sửa CSV đầu vào.</p>
+</section>
+<section id="verify"><div class="section-label" bis_skin_checked="1">04 / KIỂM TRA</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Đối chiếu script, trace và báo cáo</h2>
+<pre><code>Kiểm tra data/workload.csv, người nào vượt 8 giờ?
+Ghi báo cáo vào output/workload.md.</code></pre>
+<p>Tải lại trang để cập nhật catalog, sau đó mở cuộc trò chuyện mới. Không nhắc tên skill hoặc script trong câu hỏi. Kiểm tra agent đã đọc skill, chạy lệnh Bash, nhận JSON và ghi báo cáo.</p>
+<div class="table-wrap" bis_skin_checked="1"><table><thead><tr><th>Trường hợp kiểm tra</th><th>Kết quả cần đạt</th></tr></thead><tbody>
+<tr><td>CSV đã cho, ngưỡng 8</td><td>Lan 9 giờ, Minh 3 giờ. Chỉ Lan quá tải. Loại dòng 5 vì <code>invalid_hours</code>, dòng 6 vì <code>duplicate_id</code>, dòng 7 vì <code>missing_owner</code>.</td></tr>
+<tr><td>Cùng CSV, ngưỡng 9</td><td>Tổng giờ và dòng bị loại không đổi. Không ai quá tải.</td></tr>
+<tr><td>Không cung cấp ngưỡng</td><td>Mở cuộc trò chuyện mới, hỏi: “Tính tổng giờ theo người trong data/workload.csv và xác định người quá tải.” Agent hỏi ngưỡng trước khi kết luận.</td></tr>
+<tr><td>File không tồn tại</td><td>Script ghi lỗi ra stderr, trả mã thoát khác 0. Agent báo không phân tích được, không đưa ra tổng giờ hoặc báo cáo như khi xử lý thành công.</td></tr>
+</tbody></table></div>
+<h3>Trường hợp đặc biệt: lần xuất hiện đầu tiên của ID có hours không hợp lệ</h3>
+<p>Tạo file riêng <code>data/workload-edge.csv</code> rồi chạy script với ngưỡng 0:</p>
+<pre><code>task_id,owner,hours
+E01,Lan,abc
+E01,Lan,5
+E02,Minh,0</code></pre>
+<p><strong>Kết quả:</strong> chỉ Minh có tổng 0 giờ; không ai quá tải. Dòng 2 bị loại vì hours không hợp lệ; dòng 3 bị loại vì trùng ID. Không cộng 5 giờ cho Lan. Viết một kiểm thử tự động cho quy tắc này theo cách viết test của project.</p>
+</section>
+<section id="submit"><div class="section-label" bis_skin_checked="1">05 / NỘP BÀI</div><h2><svg class="icon heading-icon" aria-hidden="true"><use href="#icon-check"></use></svg>Yêu cầu nộp bài</h2>
+<ul class="checklist">
+<li>Skill <code>csv-quality</code> đã cập nhật đủ script, hướng dẫn và reference; có bản đồng bộ trong fixtures.</li>
+<li>CSV đầu vào và kiểm thử tự động cho trường hợp ID đầu tiên có hours không hợp lệ.</li>
+<li>JSON khi chạy script trực tiếp với ngưỡng 8 và 9; kết quả trường hợp đặc biệt.</li>
+<li>Báo cáo agent tạo và trace cho ngưỡng 8, ngưỡng 9, thiếu ngưỡng và file không tồn tại.</li>
+<li><code>analysis.md</code>: các thay đổi đã làm, kết quả từng trường hợp và vị trí bằng chứng trong trace. Không nộp thông tin bí mật hoặc <code>.env</code>.</li>
+</ul>
+<div class="note" bis_skin_checked="1"><strong>Câu hỏi cuối bài:</strong> phần nào do script tính, phần nào do model diễn giải? Nếu sửa script nhưng không cập nhật skill và reference, báo cáo có thể sai hoặc thiếu thông tin gì?</div>
+</section>
+</main>
+<footer>Tool Use &amp; Skill Use / Block 2 <span aria-hidden="true">|</span> <a href="https://pub.nndkhoa9.win/agentic-ai-engineering/d05-tool-use-skill-use/exercise-block-1.html">← Trở lại: tra cứu chính sách đúng phiên bản</a></footer>
+<script>
+(() => {
+  const icon = (name, extra = '') => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', `icon ${extra}`);
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', `#icon-${name}`);
+    svg.append(use);
+    return svg;
+  };
+  document.querySelector('h1').before(icon('terminal', 'title-icon'));
+  const sections = {prepare:'folder', build:'terminal', contract:'layers', verify:'check', submit:'check'};
+  document.querySelectorAll('main section').forEach(section => section.querySelector('h2').prepend(icon(sections[section.id] || 'layers', 'heading-icon')));
+  document.querySelectorAll('.tag').forEach((tag, index) => tag.prepend(icon(['layers','clock','users','terminal'][index])));
+  document.querySelectorAll('nav a').forEach(link => link.prepend(icon(sections[link.hash.slice(1)] || 'arrow')));
+})();
+</script>
+
+
+</body></html>

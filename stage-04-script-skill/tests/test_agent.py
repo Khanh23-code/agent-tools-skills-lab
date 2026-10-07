@@ -131,7 +131,7 @@ def test_script_skill_flow_marks_skill_and_reference_but_not_script_source(lab_d
             AIMessage(content="", tool_calls=[{"name": "read_file", "args": {"path": "skills/csv-quality/SKILL.md"}, "id": "s1"}]),
             AIMessage(
                 content="",
-                tool_calls=[{"name": "bash", "args": {"command": "python skills/csv-quality/scripts/check_csv.py --input data/tasks.csv"}, "id": "b1"}],
+                tool_calls=[{"name": "bash", "args": {"command": "python skills/csv-quality/scripts/check_csv.py --input data/tasks.csv --max-hours 8"}, "id": "b1"}],
             ),
             AIMessage(content="", tool_calls=[{"name": "read_file", "args": {"path": "skills/csv-quality/references/report-template.md"}, "id": "r1"}]),
             AIMessage(content="", tool_calls=[{"name": "write_file", "args": {"path": "output/csv-quality.md", "content": "# Báo cáo"}, "id": "w1"}]),
