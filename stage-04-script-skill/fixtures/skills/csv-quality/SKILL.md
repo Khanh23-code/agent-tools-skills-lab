@@ -9,9 +9,10 @@ Kiểm tra chất lượng CSV công việc và xác định người quá tải
 
 ## Quy tắc ngưỡng giờ (max-hours)
 
-- Tham số `--max-hours` là **bắt buộc** khi chạy script.
-- **Nếu yêu cầu kiểm tra quá tải chưa có ngưỡng**: Bắt buộc phải **hỏi lại người dùng** để lấy ngưỡng giờ trước khi kết luận hoặc chạy phân tích quá tải. **Không tự ý giả định** bất kỳ ngưỡng mặc định nào (ví dụ không mặc định là 8) và **không dùng lại ngưỡng** từ các cuộc trò chuyện cũ.
-- Khi người dùng đã cung cấp ngưỡng, truyền chính xác giá trị đó vào tham số `--max-hours`.
+- Tham số `--max-hours` là **bắt buộc** khi chạy script `check_csv.py`.
+- **Xác định ngưỡng giờ**:
+  - Nếu câu hỏi của người dùng có chứa mốc/ngưỡng giờ (ví dụ: *"người nào vượt 8 giờ?"*, *"vượt 9 giờ"*, *"ngưỡng 8 giờ"*), hãy lấy số giờ đó làm ngưỡng và truyền chính xác vào tham số `--max-hours` (ví dụ: `--max-hours 8`).
+  - **Nếu yêu cầu hoàn toàn không cung cấp mốc giờ hay ngưỡng nào** (ví dụ: *"Tính tổng giờ theo người trong data/workload.csv và xác định người quá tải"*): Bắt buộc phải **hỏi lại người dùng** để lấy ngưỡng giờ trước khi kết luận hoặc phân tích quá tải. **Không tự ý giả định** bất kỳ ngưỡng mặc định nào (không tự chọn 8) và **không dùng lại ngưỡng** từ các cuộc trò chuyện cũ.
 
 ## Chạy script
 
